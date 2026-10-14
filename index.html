@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoShorts 自動短片生成工具</title>
+<style>
+  body { font: 16px/1.75 -apple-system, "PingFang TC", "Helvetica Neue", sans-serif;
+         max-width: 720px; margin: 0 auto; padding: 48px 24px; color: #1d1d1f; }
+  h1 { font-size: 28px; margin-bottom: 4px; }
+  h2 { font-size: 19px; margin-top: 36px; border-bottom: 1px solid #e5e5e7; padding-bottom: 6px; }
+  .sub { color: #6e6e73; margin-top: 0; }
+  code { background: #f5f5f7; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e5e5e7;
+           color: #86868b; font-size: 13px; }
+  a { color: #0066cc; }
+</style>
+</head>
+<body>
+
+<h1>AutoShorts</h1>
+<p class="sub">個人用自動短片生成工具（Hermes agent）</p>
+
+<h2>這個應用程式是什麼</h2>
+<p>
+  AutoShorts 是一個<strong>個人自用</strong>的內容自動化工具。它每日在擁有者本人的電腦上
+  本機執行，用本地 AI 模型生成冷知識短片的文案、配音、字幕與剪輯，然後透過
+  YouTube Data API 把完成品上傳到<strong>擁有者本人自己的 YouTube 頻道</strong>。
+</p>
+<p>
+  本應用程式不對外提供服務，沒有其他使用者，也不收集任何第三方的資料。
+  所有運算與檔案儲存都在擁有者本人的裝置上完成。
+</p>
+
+<h2>使用的 Google 服務</h2>
+<ul>
+  <li><strong>YouTube Data API v3</strong> — 僅用於把影片上傳到擁有者本人的頻道。
+      使用的授權範圍（scope）為 <code>youtube.upload</code>、
+      <code>youtube.force-ssl</code> 及 <code>youtube.readonly</code>。</li>
+  <li><strong>Google Drive API</strong> — 僅用於把較大的成品檔案暫存到擁有者本人的雲端硬碟，
+      方便跨裝置取用。</li>
+</ul>
+
+<h2>YouTube API Services 聲明</h2>
+<p>
+  本應用程式使用 <strong>YouTube API Services</strong>。使用本應用程式即表示您同意
+  <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube 服務條款</a>。
+  關於 Google 如何處理資料，請參閱
+  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a>。
+</p>
+<p>
+  您可以隨時前往
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">
+  Google 帳戶權限頁面</a>撤銷本應用程式的存取權。
+</p>
+
+<h2>授權資料的處理</h2>
+<p>
+  OAuth 權杖只儲存在擁有者本人的電腦上（權限 600，只有該使用者可讀），
+  不會上傳到任何伺服器，也不會分享給第三方。本應用程式沒有後端伺服器。
+</p>
+
+<footer>
+  <p>© 2026 AutoShorts（個人專案）·
+     <a href="./privacy.html">隱私權政策</a></p>
+</footer>
+
+</body>
+</html>
